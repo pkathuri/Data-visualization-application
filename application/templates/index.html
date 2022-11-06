@@ -1,0 +1,49 @@
+<!-- Inheriting from the layout.html template -->
+{%extends "layout.html"%}
+<!-- Overwriting the contents in the block of layout.html -->
+{%block content%}
+<h1>Economic indicators for countries in East Africa.</h1>
+
+<div class="row" id="top-row">
+<div class="col-6">
+<div id="chart1"></div>
+</div>
+<div class="col-6">
+<div id="chart2"></div>
+</div>
+</div> </div>
+
+<div class="row" id="'bottom-row">
+<div class="col-6">
+<div id="chart3"></div>
+</div>
+<div class="col-6">
+<div id="chart4"></div>
+</div>
+</div>
+
+
+ <!-- The plotly cdn -->
+ <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+ <!-- Converting the first graph into a javascript object -->
+ <script type="text/javascript">
+   var graph1= {{graph1JSON | safe}};
+   Plotly.plot("chart1",graph1, {})
+ </script> 
+ <!-- Converting the second graph into a javascript object -->
+ <script>
+  var graph2= {{graph2JSON | safe}};
+  Plotly.plot("chart2",graph2, {})
+ </script>
+ <!-- Converting the third graph into a javascript object -->
+ <script>
+  var graph3= {{graph3JSON | safe}};
+  Plotly.plot("chart3",graph3, {})
+ </script>
+ <!-- Converting the 4th graph into a javascript object -->
+ <script>
+  var graph4= {{graph4JSON | safe}};
+  Plotly.plot("chart4",graph4, {})
+ </script>
+ 
+{%endblock%}
