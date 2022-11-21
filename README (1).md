@@ -25,4 +25,4 @@ socio-economic indicators of countries in East Africa.
 ## Dataset
 Data was extracted from the World Bank data API.
 ## APP
-Still under review to be deployed to Heroku.
+https://socio-economic-dashboard.herokuapp.com/
